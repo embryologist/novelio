@@ -1,0 +1,7 @@
+@import '~@angular/material/theming';
+@include mat-core();
+$novelio-app-primary: mat-palette($mat-deep-purple);
+$novelio-app-accent: mat-palette($mat-amber, A200, A100, A400);
+$novelio-app-warn: mat-palette($mat-red);
+$novelio-app-theme: mat-light-theme($novelio-app-primary, $novelio-app-accent, $novelio-app-warn);
+@include angular-material-theme($novelio-app-theme);
