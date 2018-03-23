@@ -1,0 +1,28 @@
+@import '../../theme.scss';
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    height: 100%;
+    background-color: #673ab7;
+    overflow: hidden;
+}
+
+div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    height: 100%;
+    z-index: -0;
+}
+
+@import '~@angular/material/theming';
+
+@mixin mat-ripple-theme($theme) {
+  .mat-ripple-element {
+    background-color: rgba(255, 255, 255, .4);
+  }
+}

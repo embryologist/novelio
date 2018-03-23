@@ -10,9 +10,13 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { environment } from "../environments/environment";
 import { MaterialModule } from "./material/material.module";
+import { AuthComponent } from "./auth/auth.component";
+
+import { AngularFireModule } from "angularfire2";
+import { AngularFireAuthModule } from "angularfire2/auth";
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, AuthComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -20,7 +24,9 @@ import { MaterialModule } from "./material/material.module";
       enabled: environment.production
     }),
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

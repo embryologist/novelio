@@ -4,5 +4,13 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: "AIzaSyBKb5Ys0Cqop_5qMF7EZYDdsM_L8U7ZDpw",
+    authDomain: "novelio-scratch.firebaseapp.com",
+    databaseURL: "https://novelio-scratch.firebaseio.com",
+    projectId: "novelio-scratch",
+    storageBucket: "gs://novelio-scratch.appspot.com/",
+    messagingSenderId: "492775268534"
+  }
 };
