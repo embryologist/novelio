@@ -14,10 +14,15 @@ import { AuthComponent } from "./auth/auth.component";
 
 import { AngularFireModule } from "angularfire2";
 import { AngularFireAuthModule } from "angularfire2/auth";
+import {AngularFirestoreModule} from "angularfire2/firestore";
+
 import { AuthService } from "./auth.service";
+import { VerifyComponent } from './auth/verify/verify.component';
+import { InterestsComponent } from './interests/interests.component';
+import { IndexComponent } from './index/index.component';
 
 @NgModule({
-  declarations: [AppComponent, AuthComponent],
+  declarations: [AppComponent, AuthComponent, VerifyComponent, InterestsComponent, IndexComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -27,7 +32,8 @@ import { AuthService } from "./auth.service";
     BrowserAnimationsModule,
     MaterialModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFirestoreModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

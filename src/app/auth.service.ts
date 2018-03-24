@@ -2,11 +2,17 @@ import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 
 import { AngularFireAuth } from "angularfire2/auth";
+import { AngularFirestore } from "angularfire2/firestore";
+
 import * as firebase from "firebase";
 
 @Injectable()
 export class AuthService {
-  constructor(private afAuth: AngularFireAuth, private router: Router) {}
+  constructor(
+    private afAuth: AngularFireAuth,
+    private router: Router,
+    private afStore: AngularFirestore
+  ) {}
 
   async login(mode = "google") {
     setTimeout(async () => {
@@ -23,7 +29,6 @@ export class AuthService {
         firebase.auth.Auth.Persistence.LOCAL
       );
       const login = await this.afAuth.auth.signInWithPopup(provider);
-      console.log(login);
       this.afterLogin(login);
     }, 1000);
   }
@@ -38,7 +43,9 @@ export class AuthService {
 
     /** IF new user THEN redirect to verification ELSE redirect to index */
     if (loginData.additionalUserInfo.isNewUser) {
-      this.router.navigate(["index"]);
+      this.router.navigate(["sign", "verify"]);
+    } else {
+      this.router.navigate(["home"]);
     }
   }
 }
