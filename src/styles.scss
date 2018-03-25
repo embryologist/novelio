@@ -11,6 +11,11 @@ html {
     align-self: stretch;
     height: 100vh !important;
     -webkit-tap-highlight-color: transparent;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2 {
+  font-family: 'Roboto Mono'
 }
 
 app-root {

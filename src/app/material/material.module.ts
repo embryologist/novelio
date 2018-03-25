@@ -13,6 +13,9 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 /** Button */
 import { MatButtonModule } from "@angular/material/button";
 
+/** Input */
+import { MatInputModule } from "@angular/material/input";
+
 /** Ripple */
 import { MatRippleModule } from "@angular/material";
 
@@ -23,14 +26,16 @@ import { MatRippleModule } from "@angular/material";
     MatSidenavModule,
     MatButtonModule,
     MatIconModule,
-    MatRippleModule
+    MatRippleModule,
+    MatInputModule
   ],
   exports: [
     MatToolbarModule,
     MatSidenavModule,
     MatButtonModule,
     MatIconModule,
-    MatRippleModule
+    MatRippleModule,
+    MatInputModule
   ],
   declarations: []
 })

@@ -43,7 +43,7 @@ export class AuthService {
 
     /** IF new user THEN redirect to verification ELSE redirect to index */
     if (loginData.additionalUserInfo.isNewUser) {
-      this.router.navigate(["sign", "verify"]);
+      this.router.navigate(["sign", "username"]);
     } else {
       this.router.navigate(["home"]);
     }
