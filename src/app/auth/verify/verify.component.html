@@ -6,6 +6,6 @@
   </h2>
 
   <mat-form-field>
-    <input matInput placeholder="Username">
+    <input matInput placeholder="Username" autofocus (keypress)="checkIfUsernameExists($event)">
   </mat-form-field>
 </div>

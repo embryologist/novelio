@@ -1,3 +1,3 @@
-<button [style.transform]="'scale(0,0)'" [@fabScale]="state" mat-fab [hidden]="hidden">
-  <mat-icon>arrow_forward</mat-icon>
+<button #fab id="fab" (click)="selectProcess()" [style.transform]="'scale(0,0)'" [@fabScale]="state" mat-fab [hidden]="hidden" [disabled]="disabled">
+  <mat-icon>{{ icon }}</mat-icon>
 </button>

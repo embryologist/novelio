@@ -14,16 +14,25 @@ import { AuthComponent } from "./auth/auth.component";
 
 import { AngularFireModule } from "angularfire2";
 import { AngularFireAuthModule } from "angularfire2/auth";
-import {AngularFirestoreModule} from "angularfire2/firestore";
+import { AngularFirestoreModule } from "angularfire2/firestore";
 
 import { AuthService } from "./auth.service";
-import { VerifyComponent } from './auth/verify/verify.component';
-import { InterestsComponent } from './interests/interests.component';
-import { IndexComponent } from './index/index.component';
-import { QuickActionsComponent } from './quick-actions/quick-actions.component';
+import { FabService } from "./fab.service";
+
+import { VerifyComponent } from "./auth/verify/verify.component";
+import { InterestsComponent } from "./interests/interests.component";
+import { IndexComponent } from "./index/index.component";
+import { QuickActionsComponent } from "./quick-actions/quick-actions.component";
 
 @NgModule({
-  declarations: [AppComponent, AuthComponent, VerifyComponent, InterestsComponent, IndexComponent, QuickActionsComponent],
+  declarations: [
+    AppComponent,
+    AuthComponent,
+    VerifyComponent,
+    InterestsComponent,
+    IndexComponent,
+    QuickActionsComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -36,7 +45,7 @@ import { QuickActionsComponent } from './quick-actions/quick-actions.component';
     AngularFireAuthModule,
     AngularFirestoreModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, FabService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
