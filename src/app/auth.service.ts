@@ -4,7 +4,7 @@ import { Router } from "@angular/router";
 import { AngularFireAuth } from "angularfire2/auth";
 import { AngularFirestore } from "angularfire2/firestore";
 
-import * as firebase from "firebase";
+import * as firebaseAuth from "firebase";
 
 @Injectable()
 export class AuthService {
@@ -14,23 +14,23 @@ export class AuthService {
     private afStore: AngularFirestore
   ) {}
 
-  async login(mode = "google") {
+  login(mode = "google") {
     setTimeout(async () => {
       let provider;
 
       switch (mode) {
         case "google":
-          provider = new firebase.auth.GoogleAuthProvider();
+          provider = new firebaseAuth.auth.GoogleAuthProvider;
           break;
         default:
-          provider = new firebase.auth.GoogleAuthProvider();
+          provider = new firebaseAuth.auth.GoogleAuthProvider;
       }
       await this.afAuth.auth.setPersistence(
-        firebase.auth.Auth.Persistence.LOCAL
+        firebaseAuth.auth.Auth.Persistence.LOCAL
       );
       const login = await this.afAuth.auth.signInWithPopup(provider);
       this.afterLogin(login);
-    }, 1000);
+    }, 500);
   }
 
   afterLogin(loginData) {

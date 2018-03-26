@@ -20,9 +20,10 @@ import { AuthService } from "./auth.service";
 import { VerifyComponent } from './auth/verify/verify.component';
 import { InterestsComponent } from './interests/interests.component';
 import { IndexComponent } from './index/index.component';
+import { QuickActionsComponent } from './quick-actions/quick-actions.component';
 
 @NgModule({
-  declarations: [AppComponent, AuthComponent, VerifyComponent, InterestsComponent, IndexComponent],
+  declarations: [AppComponent, AuthComponent, VerifyComponent, InterestsComponent, IndexComponent, QuickActionsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
