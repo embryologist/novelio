@@ -1,11 +1,10 @@
-import { Injectable, ViewChild } from "@angular/core";
-
-import { QuickActionsComponent } from "./quick-actions/quick-actions.component";
-import { MatButton } from "@angular/material";
-
+import { Injectable } from "@angular/core";
+import { BehaviorSubject } from "rxjs/BehaviorSubject";
 
 @Injectable()
 export class FabService {
-  @ViewChild(QuickActionsComponent) fabContainer: QuickActionsComponent;
-  fab: MatButton = this.fabContainer.fab;
+  fabState$: BehaviorSubject<any> = new BehaviorSubject({
+    id: null,
+    payload: null
+  });
 }
