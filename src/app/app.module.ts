@@ -16,8 +16,8 @@ import { AngularFireModule } from "angularfire2";
 import { AngularFireAuthModule } from "angularfire2/auth";
 import { AngularFirestoreModule } from "angularfire2/firestore";
 
-import { AuthService } from "./auth.service";
-import { FabService } from "./fab.service";
+import { AuthService } from "./services/auth.service";
+import { FabService } from "./services/fab.service";
 
 import { VerifyComponent } from "./auth/verify/verify.component";
 import { InterestsComponent } from "./interests/interests.component";

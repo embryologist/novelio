@@ -1,9 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
-
 import { AngularFireAuth } from "angularfire2/auth";
 import { AngularFirestore } from "angularfire2/firestore";
-
 import * as firebaseAuth from "firebase";
 
 @Injectable()
@@ -20,10 +18,10 @@ export class AuthService {
 
       switch (mode) {
         case "google":
-          provider = new firebaseAuth.auth.GoogleAuthProvider;
+          provider = new firebaseAuth.auth.GoogleAuthProvider();
           break;
         default:
-          provider = new firebaseAuth.auth.GoogleAuthProvider;
+          provider = new firebaseAuth.auth.GoogleAuthProvider();
       }
       await this.afAuth.auth.setPersistence(
         firebaseAuth.auth.Auth.Persistence.LOCAL
@@ -33,13 +31,21 @@ export class AuthService {
     }, 500);
   }
 
-  afterLogin(loginData) {
+  async afterLogin(loginData) {
     /** First, store required data in localStorage */
-    localStorage.setItem("uid", loginData.user.uid);
+    /* localStorage.setItem("uid", loginData.user.uid);
     localStorage.setItem("displayName", loginData.user.displayName);
-    localStorage.setItem("email", loginData.user.email);
+    localStorage.setItem("email", );
     localStorage.setItem("photoURL", loginData.user.photoURL);
-    localStorage.setItem("newUser", loginData.additionalUserInfo.isNewUser);
+    localStorage.setItem("newUser", loginData.additionalUserInfo.isNewUser); */
+
+    await this.afStore.doc(`users/${loginData.user.uid}`).set({
+      uid: loginData.user.uid,
+      displayName: loginData.user.displayName,
+      email: loginData.user.email,
+      photoURL: loginData.user.photoURL,
+      isSetUp: false
+    });
 
     /** IF new user THEN redirect to verification ELSE redirect to index */
     if (loginData.additionalUserInfo.isNewUser) {

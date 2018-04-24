@@ -1,9 +1,7 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from "@angular/core";
+import { AfterViewInit, Component } from "@angular/core";
 import { AngularFirestore } from "angularfire2/firestore";
 
-import { QuickActionsComponent } from "../../quick-actions/quick-actions.component";
 
-import { MatButton } from "@angular/material";
 
 @Component({
   selector: "app-verify",
