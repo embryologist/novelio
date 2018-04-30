@@ -10,7 +10,7 @@ import { MatInput } from "@angular/material";
 })
 export class VerifyComponent implements AfterViewInit {
   @ViewChild('username')  username: MatInput;
-  }
+
 
   constructor(private afStore: AngularFirestore, private fabService: FabService) { }
 
